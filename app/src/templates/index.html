@@ -1,110 +1,92 @@
 {% if nombre %}
   {% extends './User/layout_user.html' %}
+  
   {% block conten %}
-    <!-- Lógica y diseño para el usuario logueado -->
-    {{ super() }}
+    <!-- HERO BANNER TIPO CANVAS -->
+    <div class="relative h-[80vh] w-full overflow-hidden bg-black flex items-center justify-center">
+        <img src="{{url_for('static',filename='./img/Banners/Banner 1.jpg')}}" class="absolute inset-0 w-full h-full object-cover opacity-70 object-center">
+        <div class="relative z-10 text-center text-white px-4 flex flex-col items-center">
+            <span class="uppercase tracking-[0.3em] text-sm font-medium mb-4">Nueva Temporada</span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6">Descubre Primark</h1>
+            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-gray-200">Explora las últimas tendencias en moda y tecnología.</p>
+            <a href="#" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-gray-100 transition-transform duration-300 hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.3)]">Explorar Colección</a>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE CATEGORÍAS -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Tarjeta Hombre -->
+            <div class="group cursor-pointer flex flex-col">
+                <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
+                    <img src="{{url_for('static',filename='./img/cards/Hombre.jpg')}}" alt="Hombre" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900">Hombre</h3>
+                <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado a los Hombres aquí.</p>
+            </div>
+            <!-- Tarjeta Mujer -->
+            <div class="group cursor-pointer flex flex-col">
+                <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
+                    <img src="{{url_for('static',filename='./img/cards/Mujer.jpg')}}" alt="Mujer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900">Mujeres</h3>
+                <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado a las Mujeres aquí.</p>
+            </div>
+            <!-- Tarjeta Tecnología -->
+            <div class="group cursor-pointer flex flex-col">
+                <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
+                    <img src="{{url_for('static',filename='./img/cards/tecnologia.jpg')}}" alt="Tecnología" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900">Tecnología</h3>
+                <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado con la Tecnología aquí.</p>
+            </div>
+        </div>
+    </div>
   {% endblock %}
+
 {% else %}
   {% extends 'layout.html' %}
+  
   {% block contenido %}
-{% endif %}
-
-<!-- ==========================================
-     HERO BANNER TIPO CANVAS (Principal)
-     ========================================== -->
-<div class="relative h-[80vh] w-full overflow-hidden bg-black flex items-center justify-center">
-    <!-- Imagen de fondo con efecto sutil -->
-    <img src="{{url_for('static',filename='./img/Banners/Banner 1.jpg')}}" class="absolute inset-0 w-full h-full object-cover opacity-70 object-center">
-    
-    <!-- Contenido Canvas -->
-    <div class="relative z-10 text-center text-white px-4 flex flex-col items-center">
-        <span class="uppercase tracking-[0.3em] text-sm font-medium mb-4">Nueva Temporada</span>
-        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6">Descubre Primark</h1>
-        <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-gray-200">
-            Explora las últimas tendencias en moda y tecnología con una experiencia de compra totalmente renovada.
-        </p>
-        <a href="#" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-gray-100 transition-transform duration-300 hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
-            Explorar Colección
-        </a>
-    </div>
-</div>
-
-<!-- ==========================================
-     SECCIÓN DE CATEGORÍAS (Tarjetas Modernas)
-     ========================================== -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="flex justify-between items-end mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">Categorías Destacadas</h2>
-        <a href="#" class="hidden md:block text-black font-medium border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-colors">Ver todo el catálogo</a>
+    <!-- HERO BANNER TIPO CANVAS -->
+    <div class="relative h-[80vh] w-full overflow-hidden bg-black flex items-center justify-center">
+        <img src="{{url_for('static',filename='./img/Banners/Banner 1.jpg')}}" class="absolute inset-0 w-full h-full object-cover opacity-70 object-center">
+        <div class="relative z-10 text-center text-white px-4 flex flex-col items-center">
+            <span class="uppercase tracking-[0.3em] text-sm font-medium mb-4">Nueva Temporada</span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6">Descubre Primark</h1>
+            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-gray-200">Explora las últimas tendencias en moda y tecnología.</p>
+            <a href="#" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-gray-100 transition-transform duration-300 hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.3)]">Explorar Colección</a>
+        </div>
     </div>
 
-    <!-- Grid de CSS (Reemplaza a los div vacíos y flex de Bootstrap) -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-        
-        <!-- Tarjeta Hombre -->
-        <div class="group cursor-pointer flex flex-col">
-            <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
-                <img src="{{url_for('static',filename='./img/cards/Hombre.jpg')}}" alt="Moda Hombre" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <!-- Overlay sutil al pasar el mouse -->
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-500"></div>
+    <!-- SECCIÓN DE CATEGORÍAS -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Tarjeta Hombre -->
+            <div class="group cursor-pointer flex flex-col">
+                <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
+                    <img src="{{url_for('static',filename='./img/cards/Hombre.jpg')}}" alt="Hombre" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900">Hombre</h3>
+                <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado a los Hombres aquí.</p>
             </div>
-            <h3 class="text-2xl font-semibold text-gray-900">Hombre</h3>
-            <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado a los Hombres aquí.</p>
-            <a href="#" class="inline-flex items-center text-black font-medium group-hover:underline decoration-2 underline-offset-4">
-                Comprar <span class="ml-2 transition-transform group-hover:translate-x-1">&rarr;</span>
-            </a>
-        </div>
-
-        <!-- Tarjeta Mujer -->
-        <div class="group cursor-pointer flex flex-col">
-            <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
-                <img src="{{url_for('static',filename='./img/cards/Mujer.jpg')}}" alt="Moda Mujer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-500"></div>
+            <!-- Tarjeta Mujer -->
+            <div class="group cursor-pointer flex flex-col">
+                <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
+                    <img src="{{url_for('static',filename='./img/cards/Mujer.jpg')}}" alt="Mujer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900">Mujeres</h3>
+                <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado a las Mujeres aquí.</p>
             </div>
-            <h3 class="text-2xl font-semibold text-gray-900">Mujeres</h3>
-            <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado a las Mujeres aquí.</p>
-            <a href="#" class="inline-flex items-center text-black font-medium group-hover:underline decoration-2 underline-offset-4">
-                Comprar <span class="ml-2 transition-transform group-hover:translate-x-1">&rarr;</span>
-            </a>
-        </div>
-
-        <!-- Tarjeta Tecnología -->
-        <div class="group cursor-pointer flex flex-col">
-            <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
-                <img src="{{url_for('static',filename='./img/cards/tecnologia.jpg')}}" alt="Tecnología" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-500"></div>
-            </div>
-            <h3 class="text-2xl font-semibold text-gray-900">Tecnología</h3>
-            <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado con la Tecnología aquí.</p>
-            <a href="#" class="inline-flex items-center text-black font-medium group-hover:underline decoration-2 underline-offset-4">
-                Comprar <span class="ml-2 transition-transform group-hover:translate-x-1">&rarr;</span>
-            </a>
-        </div>
-
-    </div>
-</div>
-
-<!-- ==========================================
-     BANNER SECUNDARIO (Promocional)
-     ========================================== -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-    <div class="relative h-[40vh] md:h-[50vh] w-full overflow-hidden rounded-3xl group">
-        <img src="{{url_for('static',filename='./img/Banners/Banner 2.jpg')}}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-        <!-- Degradado para asegurar la lectura del texto -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-16">
-            <h3 class="text-3xl md:text-5xl font-bold text-white mb-4">Estilo que trasciende</h3>
-            <p class="text-gray-200 mb-6 max-w-lg">Aprovecha nuestras ofertas de temporada y renueva tu estilo con las mejores marcas.</p>
-            <div>
-                <a href="#" class="inline-block bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                    Ver Ofertas
-                </a>
+            <!-- Tarjeta Tecnología -->
+            <div class="group cursor-pointer flex flex-col">
+                <div class="overflow-hidden rounded-2xl mb-5 aspect-[4/5] relative bg-gray-100">
+                    <img src="{{url_for('static',filename='./img/cards/tecnologia.jpg')}}" alt="Tecnología" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900">Tecnología</h3>
+                <p class="text-gray-500 mt-2 mb-4 flex-grow">Encuentra todo lo relacionado con la Tecnología aquí.</p>
             </div>
         </div>
     </div>
-</div>
-
-{% if nombre %}
   {% endblock %}
-{% else %}
-  {% endblock %}
-{% endif %}
+{% endif %}git
